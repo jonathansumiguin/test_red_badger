@@ -22,12 +22,11 @@ public class Robot {
 
     public int CoordY { get; private set; }
 
-    public Robot(Orientation initialOrientation, int coordX, int coordY) {
-        CurrentOrientation = initialOrientation;
+    public Robot(Orientation currentOrientation, int coordX, int coordY) {
+        CurrentOrientation = currentOrientation;
         CoordX = coordX;
         CoordY = coordY;
     }
-
 
     public void Move() {
         switch(CurrentOrientation) {
@@ -55,8 +54,9 @@ public class Robot {
         var noOfEnumValues = Enum.GetValues(typeof(Orientation)).Length;
 
         // this will ensure that the orientation is going to the end of the array if turning counter clockwise
-        var newOrientationIndex = currentOrientationIndex == 0 ?
-            (noOfEnumValues - 1) : (int)CurrentOrientation + changer;
+        var newOrientationIndex = 
+            (currentOrientationIndex == 0 && turnDirection == TurnDirection.Left) ?
+                (noOfEnumValues - 1) : currentOrientationIndex + changer;
 
         CurrentOrientation = (Orientation)(newOrientationIndex % noOfEnumValues);
     }
