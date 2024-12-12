@@ -90,6 +90,8 @@ public class MarsWalk
                 // Move the robot now
                 robot.Move();
 
+                Console.WriteLine($"{robot.CoordX} {robot.CoordY} {robot.CurrentOrientation.ToString().First()}");
+
                 // Check if the robot is still within bounds
                 if (
                     robot.CoordX < 0 ||

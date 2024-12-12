@@ -29,4 +29,48 @@ LLFFFLFLFL"
 2 3 S"
             ,output);
     }
+
+    [Fact]
+    public void Test_Learn_From_Others()
+    {
+        var output = MarsWalk.ExecuteOrder(
+            @"3 3
+1 1 E
+FFFLRLRLR
+1 1 E
+FFFLRLRLR
+1 1 E
+FFLFRF"
+        );
+
+        Assert.Equal(
+            @"3 1 E LOST
+3 1 E
+3 2 E LOST"
+            ,output);
+    }
+
+    [Fact]
+    public void Test_Execute_Order_66() //SPOILER ALERT: EVERYONE DIES
+    {
+        var output = MarsWalk.ExecuteOrder(
+            @"5 5
+1 1 N
+FFFFLFF
+2 5 N
+RFRFFRFFLFFFRFF
+1 1 E
+FLFRFLFRFLFRFLFRF
+3 3 E
+FLFLFFFFRFRFRFLFFFRFLFRFRFLFLFRFRFRFLFLFRFRFLFLFRFLF"
+        );
+
+        Assert.Equal(
+            @"0 5 W LOST
+0 0 W LOST
+5 5 E LOST
+0 0 S LOST"
+            ,output);
+    }
 }
+
