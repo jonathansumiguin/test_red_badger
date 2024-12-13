@@ -42,14 +42,23 @@ FFFLRLRLR
 1 1 E
 FFLFRF
 1 1 E
-FFLFRFLLLL"
+FFLFRFLLLL
+0 0 W
+FRLRLF
+0 0 W
+FLLF
+0 0 W
+LF"
         );
 
         Assert.Equal(
             @"3 1 E LOST
 3 1 E
 3 2 E LOST
-3 2 E"
+3 2 E
+0 0 W LOST
+1 0 E
+0 0 S LOST"
             ,output);
     }
 

@@ -41,7 +41,7 @@ public class MarsWalk
 
         (LimitX, LimitY) = (int.Parse(splitMapCoordinates[0].Trim()), int.Parse(splitMapCoordinates[1].Trim()));
 
-        //robot orders
+        //split the orders every new line, then group them by 2s so that we can have a list of each robot with their orders
         var robotListWithOrders = robotOrders
             .Split("\n")
             .Select((item, index) => new { Item = item, Index = index })
