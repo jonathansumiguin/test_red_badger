@@ -40,13 +40,16 @@ FFFLRLRLR
 1 1 E
 FFFLRLRLR
 1 1 E
-FFLFRF"
+FFLFRF
+1 1 E
+FFLFRFLLLL"
         );
 
         Assert.Equal(
             @"3 1 E LOST
 3 1 E
-3 2 E LOST"
+3 2 E LOST
+3 2 E"
             ,output);
     }
 
